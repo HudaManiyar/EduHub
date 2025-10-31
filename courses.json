@@ -1,0 +1,104 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Full Stack Web Development",
+      "instructor": "Dr. Sarah Johnson",
+      "category": "Programming",
+      "duration": "12 weeks",
+      "students": 1250,
+      "rating": 4.8,
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 2,
+      "title": "Machine Learning Fundamentals",
+      "instructor": "Prof. Michael Chen",
+      "category": "Data Science",
+      "duration": "10 weeks",
+      "students": 980,
+      "rating": 4.9,
+      "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 3,
+      "title": "UI/UX Design Masterclass",
+      "instructor": "Emma Wilson",
+      "category": "Design",
+      "duration": "8 weeks",
+      "students": 1500,
+      "rating": 4.7,
+      "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 4,
+      "title": "Digital Marketing Strategy",
+      "instructor": "David Martinez",
+      "category": "Marketing",
+      "duration": "6 weeks",
+      "students": 2100,
+      "rating": 4.6,
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 5,
+      "title": "Python for Data Analysis",
+      "instructor": "Dr. Lisa Anderson",
+      "category": "Data Science",
+      "duration": "9 weeks",
+      "students": 1800,
+      "rating": 4.8,
+      "image": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 6,
+      "title": "Business Analytics",
+      "instructor": "Robert Taylor",
+      "category": "Business",
+      "duration": "7 weeks",
+      "students": 890,
+      "rating": 4.5,
+      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 7,
+      "title": "React & Redux Development",
+      "instructor": "Jennifer Lee",
+      "category": "Programming",
+      "duration": "10 weeks",
+      "students": 1600,
+      "rating": 4.9,
+      "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 8,
+      "title": "Mobile App Design",
+      "instructor": "Alex Thompson",
+      "category": "Design",
+      "duration": "8 weeks",
+      "students": 1200,
+      "rating": 4.7,
+      "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 9,
+      "title": "SEO & Content Marketing",
+      "instructor": "Maria Garcia",
+      "category": "Marketing",
+      "duration": "5 weeks",
+      "students": 1450,
+      "rating": 4.6,
+      "image": "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 10,
+      "title": "Cloud Computing with AWS",
+      "instructor": "James Wilson",
+      "category": "Programming",
+      "duration": "11 weeks",
+      "students": 1100,
+      "rating": 4.8,
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop"
+    }
+  ]
+}
