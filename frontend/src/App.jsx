@@ -84,8 +84,8 @@ function App() {
       <div className="relative z-20 max-w-4xl mx-auto p-8">
         
         <div className="bg-white/80 backdrop-blur-md p-4 rounded-xl shadow-lg mb-8 border border-white/50 max-w-fit mx-auto">
-          <h1 className="text-3xl font-bold text-center text-indigo-800">
-            🎓 Student Assignment Board
+          <h1 className="text-3xl font-bold text-center text-red-800">
+            Student Assignment Board
           </h1>
         </div>
 
