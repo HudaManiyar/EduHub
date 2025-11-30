@@ -7,25 +7,30 @@ function App() {
   const [topic, setTopic] = useState('');
   const [deadline, setDeadline] = useState('');
 
-  // READ (Get Data)
+  // --- THE IMPORTANT CHANGE ---
+  // We switched from localhost to your live Render Backend
+  const API_URL = "https://eduhub-b5yx.onrender.com"; 
+
+  // READ
   useEffect(() => {
     fetchAllTasks();
   }, []);
 
   const fetchAllTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:8800/tasks");
+      // Now using API_URL + /tasks
+      const res = await axios.get(`${API_URL}/tasks`);
       setTasks(res.data);
     } catch (err) {
       console.error(err);
     }
   };
 
-  // CREATE (Add Data)
+  // CREATE
   const handleAdd = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8800/tasks", {
+      await axios.post(`${API_URL}/tasks`, {
         subject,
         topic,
         deadline
@@ -39,20 +44,20 @@ function App() {
     }
   };
 
-  // DELETE Data
+  // DELETE
   const handleDelete = async (id) => {
     try {
-      await axios.delete("http://localhost:8800/tasks/" + id);
+      await axios.delete(`${API_URL}/tasks/` + id);
       fetchAllTasks();
     } catch (err) {
       console.error(err);
     }
   };
 
-  // UPDATE Data (Mark as Done)
+  // UPDATE
   const handleToggle = async (id, currentStatus) => {
     try {
-      await axios.put("http://localhost:8800/tasks/" + id, {
+      await axios.put(`${API_URL}/tasks/` + id, {
         completed: !currentStatus
       });
       fetchAllTasks();
@@ -78,10 +83,9 @@ function App() {
       {/* --- LAYER 3: Content --- */}
       <div className="relative z-20 max-w-4xl mx-auto p-8">
         
-        {/* FIX: Title is now inside a 'Glass Card' so it pops out */}
         <div className="bg-white/80 backdrop-blur-md p-4 rounded-xl shadow-lg mb-8 border border-white/50 max-w-fit mx-auto">
-          <h1 className="text-3xl font-bold text-center text-red-800">
-            Student Assignment Board
+          <h1 className="text-3xl font-bold text-center text-indigo-800">
+            🎓 Student Assignment Board
           </h1>
         </div>
 
