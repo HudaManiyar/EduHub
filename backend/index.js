@@ -1,19 +1,57 @@
-// backend/index.js
+// At the very top of the file
+require('dotenv').config(); 
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 
 const app = express();
-app.use(cors()); // Allow frontend to talk to backend
-app.use(express.json()); // Allow backend to understand JSON data
+app.use(cors());
+app.use(express.json());
 
-// --- CONFIGURATION ---
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root', 
-    password: 'root', // <--- REPLACE THIS WITH YOUR PASSWORD
-    database: 'student_board'
+// --- DATABASE CONNECTION (UPDATED FOR CLOUD) ---
+const db = mysql.createConnection(process.env.DATABASE_URL);
+
+db.connect((err) => {
+    if (err) {
+        console.error('Error connecting to Cloud DB:', err);
+        return;
+    }
+    console.log('Connected to Cloud MySQL DB!');
+
+    // --- AUTO-CREATE TABLE CODE ---
+    const createTableQuery = `
+        CREATE TABLE IF NOT EXISTS assignments (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            subject VARCHAR(100) NOT NULL,
+            topic VARCHAR(255) NOT NULL,
+            deadline DATE,
+            completed BOOLEAN DEFAULT false
+        )
+    `;
+    
+    db.query(createTableQuery, (err, result) => {
+        if (err) console.log("Error creating table:", err);
+        else console.log("Assignments table is ready in the cloud!");
+    });
 });
+
+// ... keep all your app.get, app.post routes exactly the same ...
+// // backend/index.js
+// const express = require('express');
+// const mysql = require('mysql2');
+// const cors = require('cors');
+
+// const app = express();
+// app.use(cors()); // Allow frontend to talk to backend
+// app.use(express.json()); // Allow backend to understand JSON data
+
+// // --- CONFIGURATION ---
+// const db = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root', 
+//     password: 'root', // <--- REPLACE THIS WITH YOUR PASSWORD
+//     database: 'student_board'
+// });
 
 // --- ROUTES (CRUD) ---
 
